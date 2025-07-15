@@ -1,0 +1,12 @@
+services:
+  sse:
+    build: .
+    container_name: sse
+    develop:
+      watch:
+        - action: sync+restart
+          path: ./
+          target: /app
+          ignore:
+            - .gitignore
+            - bin/
